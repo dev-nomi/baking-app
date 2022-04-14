@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Item Prices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_prices.each do |item_price| %>
+      <tr>
+        <td><%= item_price.item %></td>
+        <td><%= item_price.price %></td>
+        <td><%= item_price.start_date %></td>
+        <td><%= item_price.end_date %></td>
+        <td><%= link_to 'Show', item_price %></td>
+        <td><%= link_to 'Edit', edit_item_price_path(item_price) %></td>
+        <td><%= link_to 'Destroy', item_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item Price', new_item_price_path %>

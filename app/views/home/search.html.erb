@@ -1,0 +1,22 @@
+<h5>Search result for term <em>'<%= @query %>'</em> resulted in <%= pluralize(@total_hits, 'hit') %></h5>
+<p class="supertiny">&nbsp;</p>
+
+<% unless @customers&.empty? %>
+  <p><em><strong>Customers matching term '<%= @query %>'</strong></em></p>
+  <ul>
+    <% @customers&.each do |customer| %>
+      <li><%= link_to customer.name, customer_path(customer) %></li>
+    <% end %>
+  </ul>
+  <p class="smtext">&nbsp;</p>
+<% end %>
+
+<% unless @orders&.empty? %>
+  <p><em><strong>Orders matching term '<%= @query %>'</strong></em></p>
+  <ul>
+    <% @orders&.each do |order| %>
+      <li><%= link_to order.name, order_path(order) %>: owned by <%= "#{order.customer.name}" %></li>
+    <% end %>
+  </ul>
+  <p class="supertiny">&nbsp;</p>
+<% end %>

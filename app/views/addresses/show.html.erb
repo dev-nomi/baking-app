@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @address.customer %>
+</p>
+
+<p>
+  <strong>Is billing:</strong>
+  <%= @address.is_billing %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @address.recipient %>
+</p>
+
+<p>
+  <strong>Street 1:</strong>
+  <%= @address.street_1 %>
+</p>
+
+<p>
+  <strong>Street 2:</strong>
+  <%= @address.street_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @address.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @address.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @address.zip %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @address.active %>
+</p>
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

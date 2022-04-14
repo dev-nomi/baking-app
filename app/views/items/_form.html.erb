@@ -1,0 +1,20 @@
+
+<%= simple_form_for(@item) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :category %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :color %>
+    <%= f.input :inventory_level %>
+    <%= f.input :reorder_level %>
+    <%= f.input :weight %>
+    <%= f.input :is_featured %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
